@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="/bower_components/angular/angular.min.js" charset="utf-8"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js" charset="utf-8"></script>
+  <%# <script src="" charset="utf-8"></script>%>
+  <%# <script src="/js/main.js" charset="utf-8"></script>%>
+  <script src="/js/module.js" charset="utf-8"></script>
+  <script src="/js/controllers.js" charset="utf-8"></script>
+  <script src="/js/services.js" charset="utf-8"></script>
+</head>
+
+<body ng-app='myApp' controller='mainCtrl'>
+  <h1>title</h1>
+  {{2+2}}
+  <button ui-sref='home'>Home</button>
+  <button ui-sref='second'>Second</button>
+
+  <div ui-view></div>
+</body>
+</html>
