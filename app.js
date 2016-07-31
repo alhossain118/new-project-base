@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 const PORT        = process.env.PORT || 8000;
-
+const MONGO_URL = process.env.MONGO_URI || 'mongodb://localhost/mean';
 //set and require modules
 const http        = require('http'); // build into node
 const morgan      = require('morgan')
@@ -12,7 +12,9 @@ const path        = require('path')
 let app           = express();
 let server        = http.createServer(app)
 
-
+require('mongoose').connect(MONGO_URL, err => {
+  console.log(err || `MongoD is running on ${MONGO_URL}`);
+})
 //MIDDLEWARE
 app.use(morgan('dev'));
 app.use(bodyParser.json());
